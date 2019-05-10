@@ -5,9 +5,9 @@ import App from './app.jsx';
 it(`renders correctly`, () => {
   const tree = renderer
     .create(<App
-      time={0}
+      gameTime={0}
       errorCount={0}
-      onClick={jest.fn()}
+      questions={[]}
     />)
     .toJSON();
 
