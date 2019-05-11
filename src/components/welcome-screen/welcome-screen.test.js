@@ -5,7 +5,7 @@ import WelcomeScreen from './welcome-screen.jsx';
 it(`renders correctly`, () => {
   const tree = renderer
     .create(<WelcomeScreen
-      time={0}
+      gameTime={0}
       errorCount={0}
       onClick={jest.fn()}
     />)
