@@ -35,7 +35,10 @@ const ArtistQuestionScreen = ({question, onAnswer}) => {
         <audio/>
       </div>
 
-      <form className="game__artist" onChange={onAnswer}>
+      <form className="game__artist" onChange={(evt) => {
+        evt.preventDefault();
+        onAnswer();
+      }}>
         {answers.map((it, i) => <div className="artist" key={i}>
           <input className="artist__input visually-hidden" type="radio" name="answer" value={`artist-${i}`} id={`artist-${i}`}/>
           <label className="artist__name" htmlFor={`artist-${i}`}>

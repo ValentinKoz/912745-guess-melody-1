@@ -42,6 +42,6 @@ it(`Artist Question correctly workk`, () => {
     preventDefault: formSendPrevention,
   });
 
-  expect(clickHandler).toHaveBeenCalled(1);
-  expect(formSendPrevention).toHaveBeenCalled(1);
+  expect(clickHandler).toHaveBeenCalledTimes(1);
+  expect(formSendPrevention).toHaveBeenCalledTimes(1);
 });

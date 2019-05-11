@@ -33,6 +33,6 @@ it(`When user answers genre question form is not sent`, () => {
     preventDefault: formSendPrevention,
   });
 
-  expect(onAnswer).toHaveBeenCalled(1);
-  expect(formSendPrevention).toHaveBeenCalled(1);
+  expect(onAnswer).toHaveBeenCalledTimes(1);
+  expect(formSendPrevention).toHaveBeenCalledTimes(1);
 });
