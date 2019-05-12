@@ -5,10 +5,10 @@ import WelcomeScreen from './welcome-screen.jsx';
 
 Enzyme.configure({adapter: new Adapter()});
 
-it(`App correctly renders`, () => {
+it(`WelcomeScreen correctly work`, () => {
   const clickHandler = jest.fn();
   const welcomeScreen = shallow(<WelcomeScreen
-    time={0}
+    gameTime={0}
     errorCount={0}
     onClick={clickHandler}
   />);
