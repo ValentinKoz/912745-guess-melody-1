@@ -8,15 +8,15 @@ const mock = {
     genre: `folk`,
     answers: [
       {
-        src: ``,
+        src: `https:upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg`,
         genre: `blues`,
       },
       {
-        src: ``,
+        src: `https:upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg`,
         genre: `folk`,
       },
       {
-        src: ``,
+        src: `https:upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg`,
         genre: `jazz`,
       },
     ],
@@ -29,7 +29,11 @@ it(`GenreQuestionScreen is rendered correctly`, () => {
     .create(<GenreQuestionScreen
       question={question}
       onAnswer={jest.fn()}
-    />).toJSON();
+    />, {
+      createNodeMock: () => {
+        return {};
+      }
+    }).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
