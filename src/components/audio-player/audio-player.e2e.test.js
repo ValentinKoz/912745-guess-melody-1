@@ -3,6 +3,7 @@ import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import AudioPlayer from './audio-player.jsx';
 
+window.HTMLMediaElement.prototype.pause = () => {};// https://github.com/jsdom/jsdom/issues/2155
 Enzyme.configure({adapter: new Adapter()});
 
 const mock = {
@@ -26,4 +27,8 @@ it(`AudioPlayer correctly work`, () => {
   });
   expect(player.state().isPlaying).toEqual(true);
 
+  button.simulate(`click`, {
+    preventDefault: player.setState({isPlaying: !player.state().isPlaying}),
+  });
+  expect(player.state().isPlaying).toEqual(false);
 });
